@@ -9,9 +9,26 @@ import SwiftUI
 
 @main
 struct taskApp: App {
+//    let controller =  PersistenceController.shared
     var body: some Scene {
         WindowGroup {
-            ContentView()
+           ContentView()
+//                .environment(\.managedObjectContext, controller.context)
         }
     }
 }
+
+func gotoHome() {
+    if let window = UIApplication.shared.windows.first {
+        window.rootViewController = UIHostingController(rootView: TableView())
+           window.makeKeyAndVisible()
+       }
+}
+
+func gotoSingIN() {
+    if let window = UIApplication.shared.windows.first {
+        window.rootViewController = UIHostingController(rootView: ContentView())
+           window.makeKeyAndVisible()
+       }
+}
+
